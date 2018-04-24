@@ -16,13 +16,13 @@ hosts.write(localhost + '\n')
 
 me = importlib.import_module('socket').gethostname()
 
-for i in range(8):
+for i in range(1, 9):
     if me == 'gpu' + str(i):
         hosts.write('127.0.0.1 gpu{0}\n'.format(i))
     else:
         hosts.write('192.168.1.4{0} gpu{0}\n'.format(i))
 
-for i in range(1, 8):
+for i in range(1, 9):
     if 'ib' + me == 'ibgpu' + str(i):
         hosts.write('127.0.0.1 ibgpu{0}\n'.format(i))
     else:
